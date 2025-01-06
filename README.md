@@ -7,18 +7,11 @@ A self-hosted platform for distributing iOS apps to internal testers and users. 
 ## Features
 
 - Host and distribute iOS apps (.ipa files) through enterprise or ad-hoc distribution
-- Generate and serve manifest files (.plist) for iOS app installation
 - Simple web interface for uploading and managing app builds
 - Support for multiple app versions and build management
 - Secure access control for app distribution
 
 ## Getting Started
-
-### Prerequisites
-
-- Node.js 16+ 
-- Yarn package manager
-- An iOS app archive (.ipa file) signed for enterprise or ad-hoc distribution
 
 ### Installation
 
@@ -73,13 +66,14 @@ Please refer to the project documentation or contact maintainers for deployment 
 1. Upload Required Files:
    - Place your `.ipa` files in the `/public/apps` directory
    - Store app icons (`.png`) in the `/public/icons` directory
-   - Update manifest files (`.plist`) in the `/public/manifests` directory
 
 2. Manifest Configuration:
    - Edit the `.plist` template in `/public/manifests`:
 
 3. Modify `/app/page.tsx`:
    - Customize the app information
+
+[![Star History Chart](https://api.star-history.com/svg?repos=SheldonLiu0412/IOS-Test&type=Date)](https://star-history.com/#SheldonLiu0412/IOS-Test&Date)
 
 
 
