@@ -1,0 +1,26 @@
+services:
+  nextjs-iostest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: iostest
+    environment:
+      - PORT=3005
+      - HOSTNAME=0.0.0.0
+    ports:
+      - "3005:3005"
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.iostest.rule=Host(`your.domain.com`)"
+      - "traefik.http.routers.iostest.entrypoints=websecure"
+      - "traefik.http.routers.iostest.tls.certresolver=letsencrypt"
+      - "traefik.http.services.iostest.loadbalancer.server.port=3005"
+    networks:
+      - dokploy-network
+    volumes:
+      - ./public:/app/public
+
+networks:
+  dokploy-network:
+    external: true
